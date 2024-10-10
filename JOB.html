@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Opportunity</title>
+    <link rel="stylesheet" href="JOB.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Offres d'Emploi</a></li>
+                <li><a href="#">À Propos</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Bienvenue sur notre page d'Opportunités d'Emploi</h1>
+    </header>
+    <main>
+        <section class="carousel">
+            <div class="carousel-images">
+                <img src="images/ETU3.jfif" alt="Image 1" class="active">
+                <img src="images/GC2.jpg" alt="Image 2">
+                <img src="images/GC3.jpg" alt="Image 3">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+        <section class="welcome-section">
+            <h2>Explorez nos Offres d'Emploi</h2>
+            <p>Nous sommes ravis de vous accueillir ! Découvrez les opportunités passionnantes qui vous attendent.</p>
+            <button class="explore-button">Explorer Maintenant</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Votre Société</p>
+    </footer>
+    <script src="JOB.js"></script>
+</body>
+</html>

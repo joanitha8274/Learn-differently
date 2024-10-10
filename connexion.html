@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="connexion.css">
+<section class="auth-section">
+    <div class="auth-container">
+      <div class="auth-header">
+        <button class="toggle-btn" onclick="showLogin()">Se connecter</button>
+        <button class="toggle-btn" onclick="showSignup()">S'inscrire</button>
+      </div>
+      <div id="welcome-message" class="welcome-message"></div>
+  
+      <!-- Formulaire de connexion -->
+      <form id="login-form" class="auth-form" action="login-action" method="POST" style="display: none;">
+        <h2>Se connecter</h2>
+        <div class="form-group">
+          <label for="email-login">Email</label>
+          <input type="email" id="email-login" name="email" placeholder="Entrez votre email" required>
+        </div>
+        <div class="form-group">
+          <label for="password-login">Mot de passe</label>
+          <input type="password" id="password-login" name="password" placeholder="Entrez votre mot de passe" required>
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn-primary">Se connecter</button>
+        </div>
+      </form>
+  
+      <!-- Formulaire d'inscription -->
+      <form id="signup-form" class="auth-form" action="signup-action" method="POST" style="display: none;">
+        <h2>S'inscrire</h2>
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Entrez votre nom complet" required>
+        </div>
+        <div class="form-group">
+          <label for="email-signup">Email</label>
+          <input type="email" id="email-signup" name="email" placeholder="Entrez votre email" required>
+        </div>
+        <div class="form-group">
+          <label for="password-signup">Mot de passe</label>
+          <input type="password" id="password-signup" name="password" placeholder="Entrez votre mot de passe" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirmer le mot de passe</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-primary">S'inscrire</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script>
+    function handleLogin() {
+      // Exemple simple de vérification (à remplacer par ta logique de validation)
+      var email = document.getElementById("adjanonjoanitha@gmail.com").value;
+      var password = document.getElementById("joanitha28").value;
+  
+      // Ici tu peux ajouter une vérification pour valider les identifiants
+      if (email === "adjanonjoanitha@gmail.com" && password === "joanitha28") {
+        // Redirection vers le tableau de bord si les identifiants sont corrects
+        window.location.href = "dash.html"; // Redirige vers la page tableau de bord
+      } else {
+        alert("Identifiants incorrects.");
+      }
+    }
+  </script>
+  
+  <script>
+    function showLogin() {
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("signup-form").style.display = "none";
+      document.getElementById("welcome-message").textContent = "Welcome back!";
+    }
+  
+    function showSignup() {
+      document.getElementById("signup-form").style.display = "block";
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("welcome-message").textContent = "Hello new friend!";
+    }
+  </script>
+  

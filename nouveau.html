@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="nouveau.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar avec les sections à gauche -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Learn Differently</h2>
+            </div>
+            <BR></BR>
+            <BR></BR>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><i><a href="Library.html">Library</a></i></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#students">Students</a></li>
+                    <li><a href="#teachers">Teachers</a></li>
+                    <li><a href="#tasks">Task List</a></li>
+                    <li><a href="Profil.html">Professional Profil</a></li>
+                </ul>
+            </nav>
+               <BR></BR>
+               <BR>
+            <button class="help-btn"><H5>Besoin d'aide ?</H5> </button>
+           
+            <style>
+            .help-btn {
+                padding: 10px 20px;
+                background-color: #95c6e7;
+                color: white;
+                border: none;
+                border-radius: 7px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            
+            .help-btn:hover {
+                background-color: #2980b9;
+            }
+        </style>
+        </aside>
+
+        <!-- Section centrale avec les informations -->
+        <main class="main-content">
+            <header>
+                <h2 id="welcomeMessage">Welcome back, [Student Name]</h2> <br><br>
+                 <!-- Message personnalisé ici -->
+                <BR></BR>
+                <div class="top-bar">
+                    <input type="text" placeholder="Search...">
+                    <span id="date"></span>
+                </div>
+            </header>
+
+            <section id="dashboard" class="section">
+                <h2>Dashboard Overview</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Students</h3>
+                        <p>150 enrolled</p>
+                    </div>
+                    <div class="card">
+                        <h3>Courses</h3>
+                        <p>30 active courses</p>
+                    </div>
+                    <div class="card">
+                        <h3>Teachers</h3>
+                        <p>15 teachers</p>
+                    </div>
+                    <div class="card">
+                        <h3>Tasks</h3>
+                        <p id="taskCount">20 pending tasks</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+           
+        <!-- Profil de l'étudiant à droite -->
+        <aside class="profile-sidebar">
+            <div class="student-profile">
+                <img src="MG/ETU1.jfif" alt="Student Photo">
+                <h3>AMINATA GOLDEN</h3>
+                <p>L1/Genie Logiciel</p>
+                
+            </div> 
+<br><br>
+<br><br>
+
+    <div class="calendar-container">
+        <h2>Calendrier </h2>
+        <div class="calendar">
+            <div class="month">
+                <button class="prev-month" onclick="prevMonth()">&#10094;</button>
+                <h3 id="month"></h3>
+                <button class="next-month" onclick="nextMonth()">&#10095;</button>
+            </div>
+            <div class="weekdays">
+                <div>Dim</div>
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mer</div>
+                <div>Jeu</div>
+                <div>Ven</div>
+                <div>Sam</div>
+            </div>
+            <div class="days" id="days"></div>
+        </div>
+    </div>
+
+    <div class="events-list">
+        <h3>Événements </h3>
+        <ul id="events"></ul>
+    </div>
+
+    <script>
+        const months = [
+            'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+            'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'
+        ];
+
+        const events = {
+            '2024-09-15': ['Examen de Mathématiques'],
+            '2024-09-25': ['Réunion des Parents'],
+            '2024-09-30': ['Examen d\'Anglais'],
+            '2024-10-05': ['Examen de Physique'],
+            '2024-10-15': ['Examen de Gestion Administrative'],
+        };
+
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+
+        function renderCalendar() {
+            const daysElement = document.getElementById('days');
+            const monthElement = document.getElementById('month');
+            daysElement.innerHTML = '';
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            monthElement.textContent = months[currentMonth] + ' ' + currentYear;
+
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('empty');
+                daysElement.appendChild(emptyDay);
+            }
+
+            for (let i = 1; i <= daysInMonth; i++) {
+                const day = document.createElement('div');
+                day.textContent = i;
+                const date = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+
+                if (events[date]) {
+                    day.classList.add('event-day');
+                    day.addEventListener('click', () => showEvents(date));
+                }
+
+                daysElement.appendChild(day);
+            }
+        }
+
+        function showEvents(date) {
+            const eventsList = document.getElementById('events');
+            eventsList.innerHTML = '';
+
+            if (events[date]) {
+                events[date].forEach(event => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = event;
+                    eventsList.appendChild(listItem);
+                });
+            }
+        }
+
+        function prevMonth() {
+            if (currentMonth === 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else {
+                currentMonth--;
+            }
+            renderCalendar();
+        }
+        function nextMonth() {
+            if (currentMonth === 11) {
+                currentMonth = 0;
+                currentYear++;
+            } else {
+                currentMonth++;
+            }
+            renderCalendar();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCalendar);
+    </script>
+        </aside>
+    </div>
+
+
+    <!-- Script pour mettre à jour le message de bienvenue -->
+    <script src="nouveau.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    
+    
+
+</body>
+</html>

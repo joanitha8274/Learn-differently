@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LD Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2E86C1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 21px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .search-bar {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .content {
+            text-align: center;
+            padding: 25px;
+        }
+        .carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .carousel img {
+            width: 150px;
+            height: 200px;
+            margin: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>LD Library</h1>
+        <nav class="nav-links">
+            <a href="#anglais">Anglais</a>
+            <a href="#informatique">Informatique</a>
+            <a href="#informatique">Mine</a>
+            <a href="#informatique">Business</a>
+            <a href="#informatique">Informatique</a>
+        </nav>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Rechercher un livre...">
+    </div>
+
+    <div class="content">
+        <h2>Livres Recommandés</h2>
+
+        <div class="carousel">
+           <!-- Liens vers les PDF -->
+           <a href="livre1.pdf" target="_blank">
+            <img src="book1.jpg" alt="Livre 1">
+        </a>
+        <a href="livre2.pdf" target="_blank">
+            <img src="book2.jpg" alt="Livre 2">
+        </a>
+        <a href="livre3.pdf" target="_blank">
+            <img src="book3.jpg" alt="Livre 3">
+        </a>
+        <a href="livre4.pdf" target="_blank">
+            <img src="book4.jpg" alt="Livre 4">
+        </a>
+        <a href="livre5.pdf" target="_blank">
+            <img src="book5.jpg" alt="Livre 5">
+        </a>
+        <a href="livre6.pdf" target="_blank">
+            <img src="book6.jpg" alt="Livre 6">
+        </a>
+           
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

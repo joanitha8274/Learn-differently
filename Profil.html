@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Professionnel</title>
+    <link rel="stylesheet" href="Profil.css">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <!-- Couverture -->
+        <div class="cover-photo">
+            <img src="https://via.placeholder.com/1200x300" alt="Photo de couverture" id="coverImg">
+            <button class="btn-cover" onclick="modifierCover()">Modifier l'image</button>
+        </div>
+    
+        <!-- Section Profil -->
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/150" alt="Photo de profil" id="profileImg">
+                <button class="btn-profile" onclick="modifierPhoto()">Modifier</button>
+            </div>
+            <div class="profile-info">
+                <h1 id="fullName">JOANNA STEVE</h1>
+                <p id="career">IT Manager</p>
+                <p id="address">Paris</p>
+            </div>
+        </div>
+    
+        <!-- Sections en cards avec icônes en haut à droite -->
+        <section class="card">
+            <h2>Langues Parlées</h2>
+            <ul id="languesListe">
+                <li>French</li>
+                <li>English</li>
+            </ul>
+            <i class="fas fa-edit icon-card" onclick="modifierLangues()" title="Modifier les langues"></i>
+        </section>
+    
+        <section class="card">
+            <h2>CV</h2>
+            <p id="cvContent">CV non ajouté</p>
+            <i class="fas fa-plus-circle icon-card" onclick="ajouterCv()" title="Ajouter un CV"></i>
+        </section>
+    
+        <!-- Modal pour ajouter le CV -->
+<div id="cvModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('cvModal')">&times;</span>
+        <h3>Ajouter / Modifier CV</h3>
+        <form id="cvForm">
+            <label for="cvFile">Télécharger le CV :</label>
+            <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx">
+            <button type="submit" class="btn-save">Enregistrer</button>
+        </form>
+    </div>
+</div>
+
+        <section class="card">
+            <h2>Bio</h2>
+            <p id="bioContent">Bio non disponible</p>
+            <i class="fas fa-edit icon-card" onclick="modifierBio()" title="Modifier la bio"></i>
+        </section>
+    
+        <section class="card">
+            <h2>Éducation</h2>
+            <ul id="educationListe">
+                <li>Diplôme en Informatique de Gestion</li>
+            </ul>
+            <i class="fas fa-plus-circle icon-card" onclick="modifierEducation()" title="Ajouter ou modifier l'éducation"></i>
+        </section>
+    
+        <section class="card">
+            <h2>Portfolio</h2>
+            <p id="portfolioContent">Portfolio non ajouté</p>
+            <i class="fas fa-plus-circle icon-card" onclick="ajouterPortfolio()" title="Ajouter un portfolio"></i>
+        </section>
+    
+        <section class="card">
+            <h2>Expériences</h2>
+            <ul id="experiencesListe">
+                <li>Expérience non ajoutée</li>
+            </ul>
+            <i class="fas fa-plus-circle icon-card" onclick="modifierExperiences()" title="Ajouter ou modifier des expériences"></i>
+        </section>
+    </div>
+
+    <script src="profil.js"></script>
+
+</body>
+</html>

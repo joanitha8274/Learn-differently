@@ -1,0 +1,396 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF;
+    padding: 10px 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Login and Sign Up buttons */
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn, .signup-btn {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 8px 12px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background-color: white;
+    color: #007BFF;
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .navbar {
+    background-color: #444;
+}
+
+body.dark-mode .nav-links a {
+    color: #f4f4f4;
+}
+
+body.dark-mode .login-btn, body.dark-mode .signup-btn {
+    border-color: #f4f4f4;
+}
+
+body.dark-mode .login-btn:hover, body.dark-mode .signup-btn:hover {
+    background-color: #f4f4f4;
+    color: #444;
+}
+
+ 
+
+
+/* Bannière principale INTERFACE */
+
+.homepage-banner {
+    position: relative;
+    background-image: url('images/ETU1.jfif'); /* Image d'arrière-plan */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Pleine hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Superposition avec effet sombre */
+    backdrop-filter: blur(5px); /* Effet de flou sur l'arrière-plan */
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  .banner-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Légère ombre pour lisibilité */
+  }
+  
+  .banner-content p {
+    font-size: 18px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Légère ombre pour lisibilité */
+  }
+  .cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #ff7f50; /* Couleur vive du bouton */
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff5722; /* Changement de couleur au survol */
+  }
+
+/* Présentation rapide */
+.intro {
+    padding: 40px;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 20px;
+}
+
+/* Bouton Assistant(e) virtuel(le) */
+.virtual-assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.virtual-assistant button {
+    padding: 15px 20px;
+    background-color: #00cc99;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.virtual-assistant button:hover {
+    background-color: #009977;
+}
+/* Section video */
+
+  
+  
+
+
+/* Revision Section */
+.revision {
+    background-color: #e0f7fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.revision h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.revision p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.revision-categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.category p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.category .btn {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.category .btn:hover {
+    background-color: #cc7a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+/* Génie Civil Section */
+.civil-engineering {
+    background-color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.civil-engineering h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.civil-engineering p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.civil-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-item {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.content-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.content-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.content-item .btn {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.content-item .btn:hover {
+    background-color: #cc7a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-item {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+/* English Section */
+.english {
+    background-color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.english h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.english p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.english-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-item {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 22%;
+    text-align: center;
+}
+
+.content-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.content-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.content-item .btn {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.content-item .btn:hover {
+    background-color: #cc7a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-item {
+        width: 80%;
+        margin: 10px auto;
+    }
+}

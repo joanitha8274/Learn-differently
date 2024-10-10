@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Fond bleu clair */
+    color: #333; /* Couleur du texte */
+}
+
+header {
+    background-color: #007bff; /* Couleur bleue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none; /* Supprimer les puces */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Afficher les éléments en ligne */
+    margin-right: 20px; /* Espacement entre les éléments */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Supprimer le soulignement */
+}
+
+h1 {
+    margin: 0;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: none; /* Masquer les images par défaut */
+}
+
+.carousel-images img.active {
+    display: block; /* Afficher uniquement l'image active */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 123, 255, 0.7);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white; /* Fond blanc pour la section d'accueil */
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.explore-button {
+    background-color: #007bff; /* Bouton bleu */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.explore-button:hover {
+    background-color: #0056b3; /* Couleur du bouton au survol */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #007bff; /* Couleur bleue */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

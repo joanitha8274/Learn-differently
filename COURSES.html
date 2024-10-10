@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours - Learn Differently</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .courses-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .courses-title {
+            font-size: 36px;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .course-card {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex; /* Utilisation de flexbox pour aligner l'image et le texte */
+            align-items: center; /* Aligner verticalement au centre */
+            justify-content: space-between; /* Espacement entre l'image et le texte */
+        }
+
+        .course-card img {
+            max-width: 150px; /* Taille de l'image */
+            border-radius: 10px;
+            margin-right: 20px; /* Espacement entre l'image et le texte */
+        }
+
+        .course-card h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .course-card p {
+            margin-bottom: 10px; /* Espacement au-dessous de la description */
+        }
+
+        .course-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: block; /* Afficher le lien comme un bloc */
+            text-align: right; /* Aligner le lien à droite */
+        }
+
+        .course-card a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+       <!-- Fenêtre modale pour demander la classe -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Choisissez votre classe</h2>
+            <select id="classSelect">
+                <option value="" disabled selected>Veuillez choisir votre classe</option>
+                <option value="licence1">Licence 1</option>
+                <option value="licence2">Licence 2</option>
+                <option value="licence3">Licence 3</option>
+                <option value="master">Master</option>
+            </select>
+            <button id="submitClass">Valider</button>
+        </div>
+    </div>
+
+    <!-- Contenu des cours -->
+    <div id="courses" style="display:none;">
+        <h1>Bienvenue aux Cours</h1>
+        <div id="classContent">
+            <!-- Le contenu des cours apparaîtra ici en fonction de la classe sélectionnée -->
+            <p>Contenu selon la classe choisie...</p>
+          
+
+        </div>
+    </div>
+
+    <script>
+        // Contenu des matières pour chaque classe
+const subjects = {
+    licence1: ['Mathématiques', 'Informatique', 'Physique', 'Économie'],
+    licence2: ['Algorithmes', 'Statistiques', 'Programmation Avancée', 'Marketing'],
+    licence3: ['Base de Données', 'Gestion de Projet', 'Développement Web', 'Analyse Financière'],
+    master: ['Intelligence Artificielle', 'Machine Learning', 'Big Data', 'Éthique en Informatique']
+};
+
+// Fonction pour afficher les matières selon la classe sélectionnée
+function showSubjects(selectedClass) {
+    const subjectList = document.getElementById('subjectList');
+    subjectList.innerHTML = ''; // Vider la liste des matières avant de la remplir
+
+    // Récupérer les matières de la classe sélectionnée
+    const classSubjects = subjects[selectedClass];
+    
+    // Créer des éléments <li> pour chaque matière
+    classSubjects.forEach(subject => {
+        const li = document.createElement('li');
+        li.textContent = subject;
+        li.classList.add('subject-item');
+        subjectList.appendChild(li);
+        
+        // Ajouter un événement 'click' sur chaque matière pour afficher le contenu spécifique
+        li.addEventListener('click', function() {
+            alert(`Vous avez sélectionné la matière : ${subject}`);
+            // Ici, tu pourrais rediriger vers un autre contenu, ou charger le contenu de la matière
+        });
+    });
+}
+
+// Gestion de la sélection de la classe
+document.getElementById('submitClass').addEventListener('click', function() {
+    const selectedClass = document.getElementById('classSelect').value;
+    
+    if (selectedClass) {
+        // Masquer la fenêtre modale et afficher le contenu des cours
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('courses').style.display = 'block';
+        
+        // Afficher le titre de la classe sélectionnée
+        document.getElementById('classTitle').textContent = `Cours pour ${selectedClass.replace('licence', 'Licence ')}${selectedClass === 'master' ? ' Master' : ''}`;
+
+        // Appeler la fonction pour afficher les matières de la classe sélectionnée
+        showSubjects(selectedClass);
+        
+        console.log("Classe sélectionnée:", selectedClass);
+    } else {
+        alert('Veuillez sélectionner une classe.');
+    }
+});
+
+    </script>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+select {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#courses {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+  </style>
+
+
+    <!-- Section Cours -->
+    <section class="courses-section">
+        <h1 class="courses-title">Nos Cours</h1>
+        
+        <div class="course-card">
+            <img src="images/LEARN DIFERENTLY.png" alt="Cours d'Anglais">
+            <div>
+                <h1>Anglais</h1>
+                <p>Améliorez vos compétences linguistiques avec nos cours interactifs d'anglais.</p>
+            </div>
+            <a href="english-courses.html">Go to courses</a>
+        </div>
+
+        <div class="course-card">
+            <img src="images/python.jpg" alt="Cours de Python">
+            <div>
+                <h4>Python</h4>
+                <p>Apprenez la programmation avec Python, parfait pour les débutants et les avancés.</p>
+            </div>
+            <a href="python-courses.html">Go to courses</a>
+        </div>
+
+        <div class="course-card">
+            <img src="images/business.jpg" alt="Cours de Business">
+            <div>
+                <h4>Business</h4>
+                <p>Découvrez les principes du business et développez vos compétences professionnelles.</p>
+            </div>
+            <a href="business-courses.html">Go to courses</a>
+        </div>
+
+        <div class="course-card">
+            <img src="images/webdev.jpg" alt="Cours de Développement Web">
+            <div>
+                <h4>Développement Web</h4>
+                <p>Devenez un expert en développement web avec nos cours pratiques et modernes.</p>
+            </div>
+            <a href="webdev-courses.html">Go to courses</a>
+        </div>
+
+        <div class="course-card">
+            <img src="images/math.jpg" alt="Cours de Mathématiques">
+            <div>
+                <h4>Mathématiques</h4>
+                <p>Renforcez vos compétences en mathématiques avec nos exercices interactifs.</p>
+            </div>
+            <a href="math-courses.html">Go to courses</a>
+        </div>
+    </section>
+
+</body>
+</html>
